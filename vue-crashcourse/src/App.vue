@@ -2,7 +2,7 @@
   <div class="container">
    <Header title="Task Tracker"/>
    <Tasks :tasks="tasks"/>
-   
+
     </div>
 
 </template>
@@ -10,13 +10,13 @@
 <script>
 import Header from './components/Header.vue'
 import Tasks from './components/Tasks.vue'
-import Testing from './components/Testing.vue'
+
 export default {
   name: 'App',
   components:{
     Header, 
     Tasks,
-    Testing
+
 
   },
   data(){
@@ -58,7 +58,7 @@ export default {
 }
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: grey
+
 }
 .container {
   max-width: 500px;

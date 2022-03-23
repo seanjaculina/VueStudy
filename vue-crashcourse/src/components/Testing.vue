@@ -1,16 +1,16 @@
-<template>
-    <h1>{{testing}}</h1>
-</template>
+// <template>
+//     <h1>{{testProp}}</h1>
+// </template>
 
-<script>
-export default{
-    name: "Testing",
- props:{
-     testing: String,
- }
-}
+// <script>
+// export default{
+//     name: "Testing",
+//  props:{
+//      testProp: String,
+//  }
+// }
 
 
-</script>
+// </script>
 
-<style></style>
+// <style></style>
