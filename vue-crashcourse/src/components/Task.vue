@@ -1,7 +1,8 @@
 <template>
-    <div class="task">  
+<!-- v bind class to div, checking if the task reminder is true add a class of reminder else do nothing, after the ternary expression we always want the class of task to be included  -->
+    <div :class="[task.reminder ? 'reminder' : '', 'task']">  
     <h3>{{task.text}}
-        <i class="fas fa-times"></i>
+        <i @click="onDelete(task.id)" class="fas fa-times"></i>
 
     </h3>
     <p>{{task.day}}</p>
@@ -15,6 +16,11 @@ export default{
     name: 'Task',
     props:{
         task: Object
+    },
+    methods:{
+        onDelete(id){
+            this.$emit('delete-task', id);
+        }
     }
 }
 </script>

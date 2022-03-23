@@ -20,3 +20,8 @@ specific components scope
  - using life cycle method, created.
     - used for HTTP requests
     - load data when your page or component loads.
+
+
+6) emitting upwards to App.vue from Task.vue to allow deletion of a task
+$emit = send custom events from a child component to its parent.
+this.$emit('delete-task', task.id)
