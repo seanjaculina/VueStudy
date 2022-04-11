@@ -1,7 +1,7 @@
 <template>
   <div class="container">
    <Header title="Task Tracker"/>
-   <Tasks @delete-task="deleteTask" :tasks="tasks"/>
+   <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
 
     </div>
 
@@ -29,6 +29,10 @@ export default {
       if(confirm('Are you sure you want to delete this task?')){
         this.tasks = this.tasks.filter((task) => task.id !== id)
       }
+    },
+    // changing the color for task reminders, if the task id is equal to the id of the element that is clicked on the page, change it to the opposite (!task.reminder)
+    toggleReminder(id){
+      this.tasks = this.tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task )
     }
   },
   created(){
