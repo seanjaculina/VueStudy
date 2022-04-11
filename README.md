@@ -24,4 +24,7 @@ specific components scope
 
 6) emitting upwards to App.vue from Task.vue to allow deletion of a task
 $emit = send custom events from a child component to its parent.
+- created a onDelete method in Task component, passing in the id from the task as an argument.
+- this is then caught in the upper level of tasks component 
+- within the App.vue component, created a delete-task method
 this.$emit('delete-task', task.id)
