@@ -1,6 +1,7 @@
 <template>
   <div class="container">
    <Header title="Task Tracker"/>
+   <AddTask @add-task="addTask"/>
    <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
 
     </div>
@@ -10,14 +11,13 @@
 <script>
 import Header from './components/Header.vue'
 import Tasks from './components/Tasks.vue'
-
+import AddTask from './components/AddTask.vue'
 export default {
   name: 'App',
   components:{
     Header, 
     Tasks,
-
-
+    AddTask,
   },
   data(){
     return {
@@ -25,6 +25,10 @@ export default {
     }
   },
   methods:{
+    addTask(task){
+      // spread operator used here to go through the entire task list and then adding the new task add the end.
+      this.tasks = [...this.tasks, task]
+    },
     deleteTask(id){
       if(confirm('Are you sure you want to delete this task?')){
         this.tasks = this.tasks.filter((task) => task.id !== id)
